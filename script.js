@@ -1,13 +1,29 @@
 let attempts = 0;
+let yesButton = document.querySelector(".yes-btn");
 
 function askAgain() {
     attempts++;
-    if (attempts < 2) {
+    if (attempts < 3) {
         alert("Sure ka Mahal? Pag-isipan mo ulit. 😢");
+    } else if (attempts < 4) {
+        alert("Sige na po! 🥺");
+    } else if (attempts < 5) {
+        alert("Pleasssssssssssssssssssssse. 🥺");
     } else {
-        alert("Sige na po!");
+        alert("Pumayag kana po Mahal ko please. 🥺");
+    }
+
+    // Increase the Yes button size
+    let currentSize = parseFloat(getComputedStyle(yesButton).fontSize);
+    yesButton.style.fontSize = (currentSize + 10) + "px";
+    yesButton.style.padding = (currentSize + 5) + "px";
+
+    // Hide the No button when the Yes button gets too big
+    if (currentSize > 50) {
+        document.querySelector(".no-btn").style.display = "none";
     }
 }
+
 
 function nextPage(pageId) {
     document.querySelectorAll(".container").forEach(el => el.classList.add("hidden"));
