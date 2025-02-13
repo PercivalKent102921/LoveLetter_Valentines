@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Mahal ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container active" id="page1">
+        <h1>Mahal Ko, Will you be my Valentine? 🥰</h1>
+        <button class="yes-btn" onclick="nextPage('page2')">Yes</button>
+        <button class="no-btn" onclick="askAgain()">No</button>
+    </div>
+
+    <div class="container hidden" id="page2">
+        <h1>My Lady, Anong gusto mong gawin sa date natin? 😍</h1>
+        <label for="activity">Choose an activity:</label>
+        <select id="activity">
+            <option>Dinner Date</option>
+            <option>Watch Movies</option>
+            <option>Play Together</option>
+            <option>Tenderness</option>
+            <option>Hobby hehe</option>
+        </select>
+        <button class="yes-btn" onclick="nextPage('page3')">Next</button>
+    </div>
+
+    <div class="container hidden" id="page3">
+        <h1>What Time Mahal ko? ⏰</h1>
+        <label for="timeInput">Select Time:</label>
+        <input type="time" id="timeInput" placeholder="HH:MM" title="Select a time">
+        <button class="yes-btn" onclick="nextPage('page4')">Next</button>
+    </div>
+
+    <div class="container hidden" id="page4">
+        <h1>Anything you want to say for Valentine's Day? 💬</h1>
+        <textarea id="message" rows="4" cols="30" placeholder="Type here..."></textarea>
+        <button class="yes-btn" onclick="nextPage('page5')">Next</button>
+    </div>
+
+    <div class="container hidden" id="page5">
+        <h1>Screenshot this as your E-Receipt! 📸</h1>
+        <div class="receipt">
+            <img src="flowers.png" alt="Flower">
+            <h2>LOVE RECEIPT</h2>
+            <p id="summary"></p>
+        </div>
+        <button class="yes-btn" onclick="nextPage('page6')">Next</button>
+    </div>
+
+    <div class="container hidden" id="page6">
+        <h1>Our Photo Album 📸</h1>
+        <p>Relive our memories together! 💖</p>
+        <div class="photo-album" id="album"></div>
+        <button class="yes-btn" onclick="showPhotos()">Show Photos</button>
+        <button class="yes-btn" onclick="nextPage('page7')">Next</button>
+    </div>
+
+    <div class="container hidden" id="page7">
+        <h1>For you Mahal ko, Love Letter 🥰</h1>
+        <div class="love-letter">
+            <p><strong>My Dearest Mahal,</strong></p>
+            <p>Happy Valentine’s Day, my love! 💕</p>
+            <p>From the moment you entered my life, everything became brighter and filled with joy...</p>
+            <p>Forever yours,</p>
+            <p><strong>Percivalino ❤️</strong></p>
+        </div>
+        <button class="yes-btn" onclick="restart()">Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
